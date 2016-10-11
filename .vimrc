@@ -80,6 +80,8 @@ if has('vim_starting')
          NeoBundle 'scrooloose/nerdtree'
          NeoBundle 'scrooloose/nerdcommenter'
 	     NeoBundle 'Shougo/neomru.vim'
+	     NeoBundle 'Shougo/vimproc.vim'
+	     NeoBundle 'Shougo/unite-build'
          call neobundle#end()
 
          " ファイルタイプ別のプラグイン/インデントを有効にする↲
