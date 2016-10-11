@@ -24,11 +24,19 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <Down> gj
 nnoremap <Up>   gk
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>Q :wq<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>f :NERDTree<CR>
+noremap <S-h> ^
+noremap <S-l> $
+nmap <Leader><Leader> <S-V>
+nnoremap  <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
+map <Leader>k <Leader>c<space>
+map <Leader>b :Unite buffer<CR>
+map <Leader>r :Unite file_mru<CR>
+
 set vb t_vb=
 
 if has("syntax")
@@ -37,6 +45,7 @@ endif
 set hlsearch
 nnoremap s <Nop>
 nnoremap sj <C-w>j
+nnoremap vv <C-v>
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
@@ -44,29 +53,37 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap st :<C-u>tabnew<CR>
 nnoremap sT :<C-u>Unite tab<CR>
+
 if has('vim_starting')
-       " 初回起動時のみruntimepathにneobundleのパスを指定する
-          set runtimepath+=~/.vim/bundle/neobundle.vim/
-          endif
+        " 初回起動時のみruntimepathにneobundleのパスを指定する
+         set runtimepath+=~/.vim/bundle/neobundle.vim/
+         endif
 
-          " NeoBundleを初期化↲
-          call neobundle#begin(expand('~/.vim/bundle/'))
+         " NeoBundleを初期化↲
+         call neobundle#begin(expand('~/.vim/bundle/'))
 
-          " インストールするプラグインをここに記述↲
-          NeoBundle 'Shougo/unite.vim'
-          NeoBundle 'Shougo/vimfiler'
-          NeoBundle 'davidhalter/jedi-vim'
-          NeoBundle 'ujihisa/unite-colorscheme'
-          NeoBundle 'tomasr/molokai'
-		  NeoBundle 'notpratheek/vim-luna'
-		  NeoBundle 'sickill/vim-monokai'
-		  NeoBundle 'jaxbot/semantic-highlight.vim'
-		  NeoBundle 'nathanaelkane/vim-indent-guides'
-		  NeoBundle 'hdima/python-syntax'
-          call neobundle#end()
+         " インストールするプラグインをここに記述↲
+         NeoBundle 'Shougo/unite.vim'
+         NeoBundle 'Shougo/vimfiler'
+         NeoBundle 'davidhalter/jedi-vim'
+         NeoBundle 'ujihisa/unite-colorscheme'
+         NeoBundle 'tomasr/molokai'
+	     NeoBundle 'notpratheek/vim-luna'
+	     NeoBundle 'sickill/vim-monokai'
+	     NeoBundle 'jaxbot/semantic-highlight.vim'
+	     NeoBundle 'nathanaelkane/vim-indent-guides'
+	     NeoBundle 'hdima/python-syntax'
+	     NeoBundle 'terryma/vim-multiple-cursors'
+   	     NeoBundle 'itchyny/lightline.vim'
+         NeoBundle 'tomtom/tcomment_vim'
+         NeoBundle 'Shougo/neocomplete.vim'
+         NeoBundle 'scrooloose/nerdtree'
+         NeoBundle 'scrooloose/nerdcommenter'
+	     NeoBundle 'Shougo/neomru.vim'
+         call neobundle#end()
 
-          " ファイルタイプ別のプラグイン/インデントを有効にする↲
-          filetype plugin indent on
+         " ファイルタイプ別のプラグイン/インデントを有効にする↲
+         filetype plugin indent on
 autocmd FileType python setlocal completeopt-=preview
 
 " autocmd ColorScheme * highlight Comment ctermfg=22 guifg=#008800
@@ -86,5 +103,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
 " ガイドの幅
 let g:indent_guides_guide_size = 1
+let g:NERDSpaceDelims = 1
 
 

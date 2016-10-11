@@ -25,7 +25,26 @@ if which trash-put &> /dev/null; then
 	    alias rm='trash-put'
 fi
 
-bindkey -e
+
+bindkey -v
+bindkey "\C-j" vi-cmd-mode
+bindkey "^k" clear-screen
+bindkey -M viins '\er' history-incremental-pattern-search-forward
+bindkey -M viins '^?'  backward-delete-char
+bindkey -M viins '^A'  beginning-of-line
+bindkey -M viins '^B'  backward-char
+bindkey -M viins '^D'  delete-char-or-list
+bindkey -M viins '^E'  end-of-line
+bindkey -M viins '^F'  forward-char
+bindkey -M viins '^G'  send-break
+bindkey -M viins '^H'  backward-delete-char
+bindkey -M viins '^K'  kill-line
+bindkey -M viins '^N'  down-line-or-history
+bindkey -M viins '^P'  up-line-or-history
+bindkey -M viins '^R'  history-incremental-pattern-search-backward
+bindkey -M viins '^U'  backward-kill-line
+bindkey -M viins '^W'  backward-kill-word
+bindkey -M viins '^Y'  yank
 
 alias cd..='cd ..'
 alias rs='Rscript'
@@ -77,7 +96,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 export PATH=/home/nakamura/bin:$PATH
 
-source ~/.bettercd/bettercd.sh
+source ~/.bettercd/setting.sh
 export PATH=$PATH:$HOME/.local/bin
 export VTE_CJK_WIDTH=1
 alias markdown-pdf='\markdown-pdf -s ~/.mkd/github.css'
@@ -100,3 +119,5 @@ function extract() {
 alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 
 
+export TERM="xterm-256color"
+source /home/nakamura/.zprezto/modules/autosuggestions/external/zsh-autosuggestions.zsh
