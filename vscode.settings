@@ -1,0 +1,83 @@
+{
+    "window.zoomLevel": 1,
+    "guides.enabled": false,
+    "workbench.colorTheme": "Monokai Dimmed",
+    "vim.disableAnnoyingNeovimMessage": true,
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.wordWrap": "bounded",
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "g",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "g",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "g",
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "g",
+                "0"
+            ]
+        }
+    ],
+    "workbench.iconTheme": null,
+    "editor.renderIndentGuides": false,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "latex-workshop.latex.toolchain": [
+        {
+            "command": "platex",
+            "args": [
+                "%DOC%"
+            ]
+        },
+        {
+            "command": "pbibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "command": "platex",
+            "args": [
+                "%DOC%"
+            ]
+        },
+        {
+            "command": "platex",
+            "args": [
+                "%DOC%"
+            ]
+        },
+        {
+            "command": "dvipdfmx",
+            "args": [
+                "%DOCFILE%.dvi"
+            ]
+        }
+    ],
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\bash.exe"
+}
